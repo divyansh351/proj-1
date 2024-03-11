@@ -27,6 +27,9 @@ import { call, notifications } from "ionicons/icons";
 import { useParams } from "react-router";
 import "./Page.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 const Page: React.FC = () => {
     const { name } = useParams<{ name: string }>();
 
@@ -80,7 +83,13 @@ const Page: React.FC = () => {
                                                 <IonRow>
                                                     <IonCardTitle>
                                                         Welcome{" "}
-                                                        <span>Raandhal</span>
+                                                        <span
+                                                            style={{
+                                                                color: "orange",
+                                                            }}
+                                                        >
+                                                            Raandhal
+                                                        </span>
                                                     </IonCardTitle>
                                                 </IonRow>
                                                 <IonRow>
@@ -139,7 +148,9 @@ const Page: React.FC = () => {
                 </IonGrid>
                 <IonGrid>
                     <IonListHeader>
-                        <IonLabel>Video Games</IonLabel>
+                        <IonLabel>
+                            <h1>My Jobs</h1>
+                        </IonLabel>
                         <IonButton>See All</IonButton>
                     </IonListHeader>
                     <IonCard>
@@ -161,7 +172,7 @@ const Page: React.FC = () => {
                                         </IonCardSubtitle>
                                     </IonRow>
                                     <IonRow>
-                                        <IonCardSubtitle>
+                                        <IonCardSubtitle color="secondary">
                                             Button
                                         </IonCardSubtitle>
                                     </IonRow>
@@ -188,7 +199,7 @@ const Page: React.FC = () => {
                                         </IonCardSubtitle>
                                     </IonRow>
                                     <IonRow>
-                                        <IonCardSubtitle>
+                                        <IonCardSubtitle color="secondary">
                                             Button
                                         </IonCardSubtitle>
                                     </IonRow>
@@ -215,7 +226,7 @@ const Page: React.FC = () => {
                                         </IonCardSubtitle>
                                     </IonRow>
                                     <IonRow>
-                                        <IonCardSubtitle>
+                                        <IonCardSubtitle color="secondary">
                                             Button
                                         </IonCardSubtitle>
                                     </IonRow>
@@ -225,56 +236,51 @@ const Page: React.FC = () => {
                     </IonCard>
                 </IonGrid>
                 <IonListHeader>
-                    <IonLabel>Video Games</IonLabel>
+                    <IonLabel>
+                        <h1>Adidhi Learn</h1>
+                    </IonLabel>
                     <IonButton>See All</IonButton>
                 </IonListHeader>
 
-                <IonSegment scrollable={true}>
-                    <IonGrid>
-                        <IonRow>
-                            <IonCol>
-                                <IonCard>
-                                    <img
-                                        alt="Silhouette of mountains"
-                                        src="https://ionicframework.com/docs/img/demos/card-media.png"
-                                    />
-                                </IonCard>
-                            </IonCol>
-                            <IonCol>
-                                <IonCard>
-                                    <img
-                                        alt="Silhouette of mountains"
-                                        src="https://ionicframework.com/docs/img/demos/card-media.png"
-                                    />
-                                </IonCard>
-                            </IonCol>
-                            <IonCol>
-                                <IonCard>
-                                    <img
-                                        alt="Silhouette of mountains"
-                                        src="https://ionicframework.com/docs/img/demos/card-media.png"
-                                    />
-                                </IonCard>
-                            </IonCol>
-                            <IonCol>
-                                <IonCard>
-                                    <img
-                                        alt="Silhouette of mountains"
-                                        src="https://ionicframework.com/docs/img/demos/card-media.png"
-                                    />
-                                </IonCard>
-                            </IonCol>
-                            <IonCol>
-                                <IonCard>
-                                    <img
-                                        alt="Silhouette of mountains"
-                                        src="https://ionicframework.com/docs/img/demos/card-media.png"
-                                    />
-                                </IonCard>
-                            </IonCol>
-                        </IonRow>
-                    </IonGrid>
-                </IonSegment>
+                <Swiper
+                    spaceBetween={5}
+                    slidesPerView={1.5}
+                    onSlideChange={() => console.log("slide change")}
+                    onSwiper={(swiper) => console.log(swiper)}
+                >
+                    <SwiperSlide>
+                        <IonCard>
+                            <img
+                                alt="Silhouette of mountains"
+                                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                            />
+                        </IonCard>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <IonCard>
+                            <img
+                                alt="Silhouette of mountains"
+                                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                            />
+                        </IonCard>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <IonCard>
+                            <img
+                                alt="Silhouette of mountains"
+                                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                            />
+                        </IonCard>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <IonCard>
+                            <img
+                                alt="Silhouette of mountains"
+                                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                            />
+                        </IonCard>
+                    </SwiperSlide>
+                </Swiper>
             </IonContent>
         </IonPage>
     );
